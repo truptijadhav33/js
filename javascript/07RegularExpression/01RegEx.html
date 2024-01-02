@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter Text <input type="text" id="txt">
+    <button onclick="check()">Check</button>
+
+    <script>
+        function check(){
+        var regEx = /abc/;
+        var str = document.getElementById("txt").value;
+        if(regEx.test(str))
+        {
+            alert("String found");
+        }else{
+            alert("String not found");
+        }
+    }
+    </script>
+</body>
+</html>

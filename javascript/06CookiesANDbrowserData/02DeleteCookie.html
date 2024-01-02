@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form2">
+        Enter name:
+        <input type="text" name="Uname" />
+        <input type="button" value="delete cookie" onclick="deleteCookie()" />
+      </form>
+
+      <script>
+        function deleteCookie() {
+          with (form2) {
+            document.cookie = "Username=" + Uname.value + ";expires=Fri,1 sept 2023";
+            alert("cookie deleted");
+          }
+        }
+        document.cookie="item=panipuri";
+      </script>
+</body>
+</html>

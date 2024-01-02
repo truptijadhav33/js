@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./apple-touch-icon.png" alt="" height="120" width="120" id="pic">
+
+    <script>
+        var i,pic,imgs;
+        function init(){
+            pic = document.getElementById("pic");
+            imgs = ["padlock.png","user.png","apple-touch-icon.png"];
+            i =0;
+            rotate();
+        }
+        function rotate()
+        {
+            pic.src=imgs[i];
+            (i==(imgs.length-1))?i=0:i++;
+            setTimeout(rotate,1000);
+        }
+        document.addEventListener("DOMContentLoaded",init,false);
+    </script>
+</body>
+</html>

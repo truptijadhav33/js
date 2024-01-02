@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamically Changing the Menu</title>
+	<script type="text/javascript">
+		sy_subjects=new Array("OOP","CGR","DBMS","DSU","DTE");
+		ty_subjects=new Array("AJP","STE","EST","OSY","CSS");
+
+		function myFunction()
+		{
+			var select=document.getElementById("student");
+			var s=select.options.length;
+			for(i=s;i>=0;i--)
+			{
+				select.options.remove(i);
+			}
+			var x=document.getElementById("mySelect").value;
+			if (x=="syco")
+			 {
+			 	for (i=0;i<sy_subjects.length; i++)
+			 	 {
+			 			opt=document.createElement("option");
+			 			opt.value=sy_subjects[i];
+			 			opt.textContent=sy_subjects[i];
+			 			select.appendChild(opt);
+			 		}
+			 		}else if(x=="tyco")
+			 {
+			 	for (i=0;i<ty_subjects.length;i++)
+			 	 {
+			 			opt=document.createElement("option");
+			 			opt.value=ty_subjects[i];
+			 			opt.textContent=ty_subjects[i];
+			 			select.appendChild(opt);
+			 		}
+			}else if (x=="class") 
+			{
+						opt=document.createElement("option");
+			 			opt.value="class";
+			 			opt.textContent="Subjects";
+			 			select.appendChild(opt);
+			 		}	
+			}
+		
+	</script>
+</head>
+<body>
+<select id="mySelect" onchange="myFunction()">
+	<option value="class">Class</option>
+	<option value="syco">SYCO</option>
+	<option value="tyco">TYCO</option>
+</select>
+<select id="student" name="student">
+	<option value="0">Subjects</option>
+</select>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    Enter Text <input type="text" id="txt">
+    <button onclick="check()">Check</button>
+
+    <script>
+        function check(){
+        var regEx = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)$/;
+        var str = txt.value;
+        if(regEx.test(str))
+        {
+            alert("valid email");//^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.+[a-zA-Z0-9]+)$
+        }else{
+            alert("Invalid email");
+        }
+    }
+    </script>
+</body>
+</html>

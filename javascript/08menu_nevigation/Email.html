@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Concealing email Address</title>
+</head>
+<body>
+<h3><p>Email Address is Protected</p></h3>
+<script type="text/javascript">
+	function hide_email(email_address)
+	{
+		var avg,splitted,part1,part2;
+		splitted=email_address.split("@");
+		//console.log(splitted);//"javascript_2019","example.com"
+		part1=splitted[0];
+		//console.log(splitted[0]);//"javascript_2019"
+		avg=part1.length/2;//avg=7.5
+		part1=part1.substring(0,(part1.length-avg));
+		part2=splitted[1];
+		return part1+"...@"+part2;
+	};
+	alert(hide_email("javascript_2019@example.com"));
+</script>
+</body>
+</html>

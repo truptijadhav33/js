@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Open Window" onclick="openWindow()">
+    <input type="button" value="close Window" onclick="closeWindow()">
+    <script>
+        let myWin;
+        function openWindow()
+        {
+             myWin = window.open("04windowOpen.html","myWindow","height=500,width=500,top=300,left=400");
+             myWin.document.write("<h1>This is content on new window..!!!</h1>");
+             myWin.focus();
+        }
+        function closeWindow()
+        {
+         myWin.close();
+        }
+        
+    </script>
+</body>
+</html>

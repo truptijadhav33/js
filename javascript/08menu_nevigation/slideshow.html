@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow</title>
+    <script>
+        var img_array = ["./apple.jpg","./banana.jpg","./orange.jpg","./watermelon.jpg"];
+        var count=0;
+        function SlideShow(n){
+            count=count+n;
+            if(count<0){
+                count = img_array.length-1;
+            }
+            if(count>img_array.length-1){
+                count=0;
+            }
+            document.slide.src=img_array[count];
+        }
+    </script>
+</head>
+<style>
+    .container{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .btn-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    .container img{
+        height: 50vh;
+        width: 500px;
+    }
+</style>
+<body>
+    <div class="container">
+        <img src="./apple.jpg" name="slide">
+        <div class="btn-container">
+            <button onclick="SlideShow(-1);">Previous</button>
+            <button onclick="SlideShow(1);">Next</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Viewer</title>
+  </head>
+  <body>
+    <h1>Select an Image:</h1>
+    <select id="imageSelector" onchange="selector();">
+      <option value="">select image</option>
+      <option value="image1.png">Image 1</option>
+      <option value="image2.png">Image 2</option>
+      <option value="image3.png">Image 3</option>
+    </select>
+    <br />
+    <br />
+    <div id="imageContainer">
+      <img id="selectedImage" src="" alt="Selected Image" />
+    </div>
+
+    <script>
+
+      // Get references to the HTML elements
+
+      const imageSelector = document.getElementById("imageSelector");
+      const selectedImage = document.getElementById("selectedImage");
+
+      function selector(){
+        const selectedValue = imageSelector.value;
+        selectedImage.src = selectedValue;
+      }
+    </script>
+  </body>
+</html>
